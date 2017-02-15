@@ -22,7 +22,7 @@
 			<nav class="navbar navbar-default">
 			<div class="container">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="/">Dependency Injection</a>
+					<a class="navbar-brand" href="/">Multiple Controllers - Angular Aside</a>
 				</div>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -36,21 +36,13 @@
 
             <div ng-controller="mainController">
 
-                <div>
-                    <label>What is your twitter handle?</label>
-                    <input type="text" ng-model="handle" />
-                </div>
+                <h1>{{ name }}</h1>
 
-                <div class="alert" ng-class="{ 'alert-info': handle.length < characters, 'alert-danger': handle.length > characters}" ng-show="handle.length !== characters">
-                    <div ng-show="handle.length < characters">
-                        You have less than 5 charachters
-                    </div>
-                    <div ng-show="handle.length > characters">
-                        You have more than 5 characters
-                    </div>
-                </div>
+            </div>
 
-                <hr />
+            <div ng-controller="secondController">
+
+                <h3>{{ name}}</h3>
 
             </div>
 
