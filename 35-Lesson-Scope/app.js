@@ -37,26 +37,30 @@ myApp.service('nameService', function(){
 
 myApp.controller('mainController', ['$scope', '$log', '$routeParams', 'nameService', function($scope, $log, $routeParams, nameService) {
 
+  $scope.person = {
+    name: 'John Doe',
+    address: '555 Main St., New York, NY 11111'
+  }
 
 }]);
 
 myApp.controller('secondController', ['$scope', '$log', '$routeParams', 'nameService', function($scope, $log, $routeParams, nameService) {
 
-
+  $scope.person = {
+    name: 'Juan Doe',
+    address: '555 Main St., New Jersey, NY 22222'
+  }
 
 }]);
 
 myApp.directive('searchResult', [function () {
   return {
-    restrict: 'ACM',
-    template: `
-        <a href="#" class="list-group-item">
-          <h4 class="list-group-item-heading">John Doe</h4>
-          <p class="list-group-item-text">
-            555 Main St., New York, NY 11111
-          </p>
-        </a>
-        `,
-    replace: true
+    restrict: 'AECM',
+    templateUrl: 'directives/searchresult.html',
+    replace: true,
+    scope: {
+      personName: '@',
+      personAddress: '@'
+    }
   };
 }])
