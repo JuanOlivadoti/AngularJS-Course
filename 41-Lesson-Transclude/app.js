@@ -70,14 +70,7 @@ myApp.directive("searchResult", function() {
            personObject: "=",
            formattedAddressFunction: "&"
        },
-       link: function(scope,elements, attrs){
-              console.log('Linking..');
-
-              if (scope.personObject.name == 'Emma') {
-                elements.removeAttr('class');
-              }
-              console.log(elements);
-       }
+       transclude: true
    }
 });
 
