@@ -1,0 +1,31 @@
+<h1>Forecast for {{ city }}</h1>
+<hr>
+<h4>Choose days </h4>
+<div class="btn-group" role="">
+  <a href="#/forecast/1" ng-class="{'btn-primary': days === '1'}" class="btn btn-default" role="">1 Day</a>
+  <a href="#/forecast/2" ng-class="{'btn-primary': days === '2'}" class="btn btn-default" role="">2 Day</a>
+  <a href="#/forecast/3" ng-class="{'btn-primary': days === '3'}" class="btn btn-default" role="">3 Day</a>
+  <a href="#/forecast/4" ng-class="{'btn-primary': days === '4'}" class="btn btn-default" role="">4 Day</a>
+  <a href="#/forecast/5" ng-class="{'btn-primary': days === '5'}" class="btn btn-default" role="">5 Day</a>
+  <a href="#/forecast/6" ng-class="{'btn-primary': days === '6'}" class="btn btn-default" role="">6 Day</a>
+  <a href="#/forecast/7" ng-class="{'btn-primary': days === '7'}" class="btn btn-default" role="">7 Day</a>
+</div>
+
+<hr>
+
+<div class="row">
+
+  <div ng-repeat="wItem in weatherResult.list">
+    <div class="col-md-3">
+
+      <daybox
+        item="wItem"
+        convert-to-standard="convertToCelsius(temp)"
+        convert-to-date="convertToDate(datetime)"
+        date-formatter="d / MMM / y"
+      ></daybox>
+
+    </div>
+  </div>
+
+</div>
