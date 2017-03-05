@@ -1,5 +1,13 @@
+import angular from 'angular';
+
+import 'angular-animate';
+import 'angular-aria';
+import 'angular-material';
+import 'angular-route';
+import 'angular-resource';
+
 //MODULE
-var weatherApp = angular.module('weatherApp', ['ngRoute', 'ngResource']);
+var weatherApp = angular.module('weatherApp', ['ngRoute', 'ngResource', 'ngMaterial']);
 
 weatherApp.config(['$routeProvider', function ($routeProvider) {
 
